@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,9 +10,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
           <div>
-            <h3 className="text-primary-accent text-xl font-bold mb-4">
-              Ayahfinder
-            </h3>
+            <Link href="/" className="flex items-center gap-2 mb-4 group">
+              <Image
+                src="/logo.png"
+                alt="Ayahfinder"
+                width={120}
+                height={40}
+                className="w-auto h-20 brightness-0 invert"
+              />
+              <span className="text-2xl font-bold italic text-white">
+                Ayahfinder
+              </span>
+            </Link>
             <p className="text-gray-light">
               Making the Quran accessible to everyone
             </p>

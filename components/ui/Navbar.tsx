@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -10,8 +11,18 @@ export default function Navbar() {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-primary-green">
-            Ayahfinder
+          <Link href="/" className="flex items-center gap-2 group">
+            <Image
+              src="/logo.png"
+              alt="Ayahfinder"
+              width={200}
+              height={200}
+              className="w-auto h-20"
+              priority
+            />
+            <span className="text-2xl font-bold italic text-primary-green">
+              Ayahfinder
+            </span>
           </Link>
 
           {/* Desktop Menu */}
