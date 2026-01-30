@@ -3,6 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy - Ayahfinder",
   description: "Ayahfinder Privacy Policy. Learn how we collect, use, and protect your data.",
+  keywords: ["privacy policy", "ayahfinder privacy", "data protection", "user privacy"],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://getayahfinder.com/privacy",
+  },
 };
 
 export default function Privacy() {
@@ -13,7 +21,7 @@ export default function Privacy() {
           Privacy Policy
         </h1>
         <p className="text-gray-medium text-lg mb-8 italic">
-          Last updated: January 26, 2024
+          Last updated: January 26, 2026
         </p>
 
         <div className="prose prose-lg max-w-none space-y-8">
@@ -23,9 +31,9 @@ export default function Privacy() {
             </h2>
             <p className="text-gray-medium leading-relaxed">
               Welcome to Ayahfinder. This Privacy Policy explains how Ibrahim
-              Doba ("we," "us," or "our") collects, uses, shares, and protects
+              Doba (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, shares, and protects
               your personal information when you use the Ayahfinder mobile
-              application (the "App"). We are committed to protecting your
+              application (the &quot;App&quot;). We are committed to protecting your
               privacy and handling your data in an open and transparent manner.
             </p>
             <p className="text-gray-medium leading-relaxed mt-4">
@@ -79,7 +87,7 @@ export default function Privacy() {
               2.3 Usage Analytics
             </h3>
             <p className="text-gray-medium leading-relaxed">
-              We collect analytics data to improve the App's performance and
+              We collect analytics data to improve the App&apos;s performance and
               user experience, including:
             </p>
             <ul className="list-disc ml-6 text-gray-medium space-y-2 mt-3">
@@ -242,14 +250,14 @@ export default function Privacy() {
             </ul>
             <p className="text-gray-medium leading-relaxed mt-4">
               To exercise any of these rights, please contact us at
-              ibrahimdoba55@gmail.com. We will respond to your request within 30
+              support@getayahfinder.com. We will respond to your request within 30
               days.
             </p>
           </section>
 
           <section>
             <h2 className="text-3xl font-semibold text-primary-green mb-4">
-              8. Children's Privacy
+              8. Children&apos;s Privacy
             </h2>
             <p className="text-gray-medium leading-relaxed">
               Ayahfinder is intended for users of all ages. We do not knowingly
@@ -282,7 +290,7 @@ export default function Privacy() {
             </p>
             <ul className="list-disc ml-6 text-gray-medium space-y-2 mt-3">
               <li>Posting the new Privacy Policy in the App</li>
-              <li>Updating the "Last updated" date</li>
+              <li>Updating the &quot;Last updated&quot; date</li>
               <li>
                 Sending you an email notification (for significant changes)
               </li>
@@ -303,10 +311,10 @@ export default function Privacy() {
             </p>
             <div className="bg-gray-bg p-6 rounded-lg">
               <p className="text-gray-dark mb-2">
-                <strong>Developer:</strong> Ibrahim Doba
+                <strong>Developer:</strong> Ayahfinder Team
               </p>
               <p className="text-gray-dark mb-2">
-                <strong>Email:</strong> ibrahimdoba55@gmail.com
+                <strong>Email:</strong> support@getayahfinder.com
               </p>
               <p className="text-gray-dark">
                 <strong>Location:</strong> Nigeria

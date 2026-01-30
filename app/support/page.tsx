@@ -3,6 +3,16 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Support - Ayahfinder",
   description: "Get help with Ayahfinder. FAQs, troubleshooting, and contact information.",
+  keywords: ["ayahfinder support", "help", "faq", "troubleshooting", "contact"],
+  alternates: {
+    canonical: "https://getayahfinder.com/support",
+  },
+  openGraph: {
+    title: "Support - Ayahfinder",
+    description: "Get help with Ayahfinder. FAQs, troubleshooting, and contact information.",
+    type: "website",
+    url: "https://getayahfinder.com/support",
+  },
 };
 
 export default function Support() {
@@ -35,7 +45,7 @@ export default function Support() {
     {
       question: "How do I report incorrect results?",
       answer:
-        "If you encounter incorrect recognition results, please contact us at ibrahimdoba55@gmail.com with details about the recitation and the incorrect result. Your feedback helps us improve the app.",
+        "If you encounter incorrect recognition results, please contact us at support@getayahfinder.com with details about the recitation and the incorrect result. Your feedback helps us improve the app.",
     },
     {
       question: "Can I use Ayahfinder during prayer?",
@@ -45,7 +55,7 @@ export default function Support() {
     {
       question: "How do I delete my account?",
       answer:
-        "You can request account deletion by emailing us at ibrahimdoba55@gmail.com. We will process your request within 7 business days and permanently delete all your personal data from our servers.",
+        "You can request account deletion by emailing us at support@getayahfinder.com. We will process your request within 7 business days and permanently delete all your personal data from our servers.",
     },
   ];
 
@@ -64,11 +74,11 @@ export default function Support() {
         <section className="mb-16 bg-gradient-to-r from-primary-green to-primary-light text-white p-8 rounded-xl">
           <h2 className="text-3xl font-semibold mb-4">Need Help?</h2>
           <p className="text-lg mb-6">
-            Can't find what you're looking for? We're here to help!
+            Can&apos;t find what you&apos;re looking for? We&apos;re here to help!
           </p>
           <div className="space-y-2">
             <p>
-              <strong>Email:</strong> ibrahimdoba55@gmail.com
+              <strong>Email:</strong> support@getayahfinder.com
             </p>
             <p>
               <strong>Response Time:</strong> We typically respond within 24-48

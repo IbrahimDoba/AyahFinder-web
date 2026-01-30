@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState<number>(2026);
+  
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="bg-gray-dark text-white">
@@ -43,6 +50,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/blog"
+                  className="text-gray-light hover:text-primary-accent transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/support"
                   className="text-gray-light hover:text-primary-accent transition-colors"
                 >
@@ -72,8 +87,8 @@ export default function Footer() {
           <div>
             <h4 className="text-primary-accent font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-light">
-              <li>Email: ibrahimdoba55@gmail.com</li>
-              <li>Developer: Ibrahim Doba</li>
+              <li>Email: support@getayahfinder.com</li>
+              <li>Developer: Ayahfinder Team</li>
               <li>Location: Nigeria</li>
             </ul>
           </div>
@@ -81,7 +96,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-medium pt-6 text-center text-gray-light">
-          <p>&copy; {currentYear} Ayahfinder. All rights reserved.</p>
+          <p>&copy; {currentYear || 2026} Ayahfinder. All rights reserved.</p>
         </div>
       </div>
     </footer>

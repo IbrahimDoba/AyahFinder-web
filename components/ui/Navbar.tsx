@@ -45,6 +45,14 @@ export default function Navbar() {
             </li>
             <li>
               <Link
+                href="/blog"
+                className="text-gray-dark hover:text-primary-green transition-colors font-medium"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/support"
                 className="text-gray-dark hover:text-primary-green transition-colors font-medium"
               >
@@ -112,6 +120,15 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="block py-2 text-gray-dark hover:text-primary-green transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
               </Link>
             </li>
             <li>

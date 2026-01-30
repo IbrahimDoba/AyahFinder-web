@@ -3,6 +3,16 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About - Ayahfinder",
   description: "Learn about Ayahfinder, the innovative app that helps you identify Quran recitations instantly.",
+  keywords: ["about ayahfinder", "quran app", "islamic technology", "ibrahim doba"],
+  alternates: {
+    canonical: "https://getayahfinder.com/about",
+  },
+  openGraph: {
+    title: "About - Ayahfinder",
+    description: "Learn about Ayahfinder, the innovative app that helps you identify Quran recitations instantly.",
+    type: "website",
+    url: "https://getayahfinder.com/about",
+  },
 };
 
 export default function About() {
@@ -13,7 +23,7 @@ export default function About() {
           About Ayahfinder
         </h1>
         <p className="text-gray-medium text-lg mb-8">
-          Last updated: January 26, 2024
+          Last updated: January 26, 2026
         </p>
 
         <div className="prose prose-lg max-w-none">
@@ -29,9 +39,9 @@ export default function About() {
               curiosity inspired us to create this app.
             </p>
             <p className="text-gray-medium leading-relaxed">
-              Just like how Shazam revolutionized music discovery, Ayahfinder
-              brings the same innovation to Quranic recitations, helping Muslims
-              around the world deepen their connection with the Holy Quran.
+              Ayahfinder brings innovative audio recognition technology to
+              Quranic recitations, helping Muslims around the world deepen their
+              connection with the Holy Quran.
             </p>
           </section>
 
@@ -42,7 +52,7 @@ export default function About() {
             <p className="text-gray-medium leading-relaxed mb-4">
               Our advanced audio recognition technology listens to Quran
               recitations and matches them against our comprehensive database.
-              Within seconds, you'll know exactly which Surah and Ayah is being
+              Within seconds, you&apos;ll know exactly which Surah and Ayah is being
               recited, along with the complete text, translation, and tafsir.
             </p>
             <p className="text-gray-medium leading-relaxed">
@@ -104,15 +114,15 @@ export default function About() {
               Contact Us
             </h2>
             <p className="text-gray-medium leading-relaxed mb-4">
-              We'd love to hear from you! Whether you have questions,
-              suggestions, or feedback, please don't hesitate to reach out.
+              We&apos;d love to hear from you! Whether you have questions,
+              suggestions, or feedback, please don&apos;t hesitate to reach out.
             </p>
             <div className="bg-gray-bg p-6 rounded-lg">
               <p className="text-gray-dark mb-2">
-                <strong>Email:</strong> ibrahimdoba55@gmail.com
+                <strong>Email:</strong> support@getayahfinder.com
               </p>
               <p className="text-gray-dark mb-2">
-                <strong>Developer:</strong> Ibrahim Doba
+                <strong>Developer:</strong> Ayahfinder Team
               </p>
               <p className="text-gray-dark">
                 <strong>Location:</strong> Nigeria

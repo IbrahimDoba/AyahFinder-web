@@ -1,6 +1,6 @@
 # Ayahfinder Website
 
-Official website for Ayahfinder - Shazam for the Holy Quran. This website contains all necessary pages for Google Play Store and Apple App Store submission.
+Official website for Ayahfinder - Instantly identify Quran recitations and find the exact Surah and Ayah. This website contains all necessary pages for Google Play Store and Apple App Store submission.
 
 ## Features
 
@@ -73,13 +73,28 @@ pnpm start
 ayahfinderWeb/
 ├── app/                    # Next.js app directory
 │   ├── about/             # About page
+│   ├── blog/              # Blog pages
+│   │   ├── page.tsx       # Blog listing page
+│   │   └── [slug]/        # Individual blog posts
 │   ├── privacy/           # Privacy Policy page
 │   ├── support/           # Support page
 │   ├── terms/             # Terms & Conditions page
 │   ├── layout.tsx         # Root layout
 │   ├── page.tsx           # Home page
-│   └── globals.css        # Global styles
+│   ├── globals.css        # Global styles
+│   ├── sitemap.ts         # Dynamic sitemap
+│   └── robots.ts          # Robots.txt
 ├── components/            # React components
+│   ├── blog/              # Blog components
+│   │   ├── Alert.tsx      # Alert callout box
+│   │   ├── BlogCard.tsx   # Blog post card
+│   │   ├── CodeBlock.tsx  # Code block with copy
+│   │   ├── CtaBox.tsx     # CTA box component
+│   │   ├── Pagination.tsx # Pagination component
+│   │   ├── RelatedPosts.tsx # Related articles
+│   │   ├── TableOfContents.tsx # TOC sidebar
+│   │   ├── Tip.tsx        # Tip callout box
+│   │   └── Warning.tsx    # Warning callout box
 │   ├── sections/          # Page sections
 │   │   ├── Hero.tsx
 │   │   ├── Features.tsx
@@ -87,9 +102,15 @@ ayahfinderWeb/
 │   └── ui/                # UI components
 │       ├── Navbar.tsx
 │       └── Footer.tsx
+├── content/               # MDX content
+│   └── blog/              # Blog posts (MDX files)
+├── lib/                   # Utility functions
+│   ├── blog.ts            # Blog data functions
+│   └── utils.ts           # General utilities
 ├── public/                # Static files
 ├── tailwind.config.ts     # Tailwind CSS configuration
-├── next.config.js         # Next.js configuration
+├── next.config.ts         # Next.js configuration
+├── mdx-components.tsx     # MDX component mappings
 ├── tsconfig.json          # TypeScript configuration
 └── package.json           # Project dependencies
 ```
@@ -160,40 +181,93 @@ colors: {
 }
 ```
 
+## Blog System (MDX)
+
+The website includes a complete MDX-powered blog system with SEO optimization:
+
+### Features
+
+- **MDX Support**: Write articles in Markdown with embedded React components
+- **SEO Optimized**: Automatic meta tags, Open Graph, Twitter Cards, Schema.org structured data
+- **Table of Contents**: Automatic TOC generation from headings
+- **Related Posts**: Smart post recommendations based on tags and categories
+- **Custom Components**: Alert boxes, tips, warnings, CTA boxes, code blocks
+- **Pagination**: Clean pagination for blog listing
+- **Sitemap**: Automatic sitemap generation including all blog posts
+
+### Creating a New Blog Post
+
+1. Create a new `.mdx` file in `content/blog/`
+2. Add frontmatter metadata:
+
+```mdx
+---
+title: "Your Article Title"
+description: "Brief description for SEO (150-160 chars)"
+date: "2024-01-20"
+author: "Author Name"
+authorTitle: "Author Title"
+tags: ["quran", "tajweed", "islam"]
+category: "Category Name"
+featured: true  # Set true for featured post
+coverImage: "/images/your-image.jpg"  # Optional
+---
+
+## Your Content
+
+Write in Markdown...
+
+<Tip title="Pro Tip">
+Use custom components in your MDX!
+</Tip>
+```
+
+### Available MDX Components
+
+- `<Alert type="info|success|warning|error" title="...">` - Callout boxes
+- `<Tip title="...">` - Pro tip boxes with lightbulb icon
+- `<Warning title="...">` - Warning boxes
+- `<CtaBox title="..." buttonText="..." buttonHref="...">` - Call-to-action boxes
+- `<CodeBlock>` - Code blocks with syntax highlighting and copy button
+
+### Customizing Code Styling
+
+Code blocks are styled with a dark theme and include:
+- Language indicator
+- Copy to clipboard button
+- Horizontal scroll for long lines
+
 ## SEO Optimization
 
-The website includes:
-- Meta tags for better SEO
-- Open Graph tags for social sharing
-- Proper heading hierarchy
-- Semantic HTML structure
-- Mobile-responsive design
+The website includes comprehensive SEO features:
+
+### Technical SEO
+- ✅ Meta tags (Title: 50-60 chars, Description: 150-160 chars)
+- ✅ Semantic HTML with proper H1-H6 hierarchy
+- ✅ Open Graph tags for social sharing
+- ✅ Twitter Cards
+- ✅ Canonical URLs
+- ✅ Sitemap.xml (auto-generated)
+- ✅ Robots.txt
+- ✅ Schema.org structured data:
+  - Organization schema
+  - Website schema
+  - Article schema (for blog posts)
+  - Breadcrumb schema
+
+### Content SEO
+- ✅ Keyword-optimized blog posts
+- ✅ Internal linking
+- ✅ Image alt text
+- ✅ Reading time estimation
+- ✅ Related posts
 
 ### Adding a Sitemap
 
-To add a sitemap, create `app/sitemap.ts`:
-
-```typescript
-import { MetadataRoute } from 'next'
-
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://ayahfinder.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: 'https://ayahfinder.com/about',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    // Add more pages...
-  ]
-}
-```
+The sitemap is automatically generated at `app/sitemap.ts` and includes:
+- All static pages
+- All blog posts with last modified dates
+- Proper priorities and change frequencies
 
 ## App Store Submission
 
@@ -213,12 +287,12 @@ This website includes all pages required for app store submissions:
 
 ## License
 
-Copyright © 2024 Ibrahim Doba. All rights reserved.
+Copyright © 2024 Ayahfinder Team. All rights reserved.
 
 ## Contact
 
-**Developer:** Ibrahim Doba
-**Email:** ibrahimdoba55@gmail.com
+**Developer:** Ayahfinder Team
+**Email:** support@getayahfinder.com
 **Location:** Nigeria
 
 ---

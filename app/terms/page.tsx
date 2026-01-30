@@ -3,6 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms & Conditions - Ayahfinder",
   description: "Ayahfinder Terms and Conditions of Use. Read the terms governing your use of the app.",
+  keywords: ["terms and conditions", "terms of service", "ayahfinder terms", "user agreement"],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://getayahfinder.com/terms",
+  },
 };
 
 export default function Terms() {
@@ -13,7 +21,7 @@ export default function Terms() {
           Terms & Conditions
         </h1>
         <p className="text-gray-medium text-lg mb-8 italic">
-          Last updated: January 26, 2024
+          Last updated: January 26, 2026
         </p>
 
         <div className="prose prose-lg max-w-none space-y-8">
@@ -22,10 +30,10 @@ export default function Terms() {
               1. Acceptance of Terms
             </h2>
             <p className="text-gray-medium leading-relaxed">
-              Welcome to Ayahfinder. These Terms and Conditions ("Terms")
+              Welcome to Ayahfinder. These Terms and Conditions (&quot;Terms&quot;)
               constitute a legally binding agreement between you and Ibrahim
-              Doba ("we," "us," or "our") regarding your use of the Ayahfinder
-              mobile application (the "App").
+              Doba (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) regarding your use of the Ayahfinder
+              mobile application (the &quot;App&quot;).
             </p>
             <p className="text-gray-medium leading-relaxed mt-4">
               By downloading, installing, or using the App, you agree to be
@@ -136,7 +144,7 @@ export default function Terms() {
             </h3>
             <p className="text-gray-medium leading-relaxed">
               The App and its original content, features, and functionality are
-              owned by Ibrahim Doba and are protected by international
+              owned by Ayahfinder Team and are protected by international
               copyright, trademark, patent, trade secret, and other intellectual
               property laws.
             </p>
@@ -200,7 +208,7 @@ export default function Terms() {
               7. Disclaimer of Warranties
             </h2>
             <p className="text-gray-medium leading-relaxed">
-              THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES
+              THE APP IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES
               OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
               TO:
             </p>
@@ -243,10 +251,10 @@ export default function Terms() {
               9. Indemnification
             </h2>
             <p className="text-gray-medium leading-relaxed">
-              You agree to indemnify, defend, and hold harmless Ibrahim Doba and
+              You agree to indemnify, defend, and hold harmless Ayahfinder Team and
               his affiliates, officers, agents, and employees from any claims,
               liabilities, damages, losses, costs, or expenses (including
-              reasonable attorneys' fees) arising out of or related to:
+              reasonable attorneys&apos; fees) arising out of or related to:
             </p>
             <ul className="list-disc ml-6 text-gray-medium space-y-2 mt-3">
               <li>Your use of the App</li>
@@ -278,7 +286,7 @@ export default function Terms() {
             </p>
             <ul className="list-disc ml-6 text-gray-medium space-y-2 mt-3">
               <li>Posting the revised Terms in the App</li>
-              <li>Updating the "Last updated" date</li>
+              <li>Updating the &quot;Last updated&quot; date</li>
               <li>
                 Sending you an email notification (for significant changes)
               </li>
@@ -333,7 +341,7 @@ export default function Terms() {
             </h2>
             <p className="text-gray-medium leading-relaxed">
               These Terms, together with our Privacy Policy, constitute the
-              entire agreement between you and Ibrahim Doba regarding the App
+              entire agreement between you and Ayahfinder Team regarding the App
               and supersede all prior agreements and understandings.
             </p>
           </section>
@@ -347,10 +355,10 @@ export default function Terms() {
             </p>
             <div className="bg-gray-bg p-6 rounded-lg">
               <p className="text-gray-dark mb-2">
-                <strong>Developer:</strong> Ibrahim Doba
+                <strong>Developer:</strong> Ayahfinder Team
               </p>
               <p className="text-gray-dark mb-2">
-                <strong>Email:</strong> ibrahimdoba55@gmail.com
+                <strong>Email:</strong> support@getayahfinder.com
               </p>
               <p className="text-gray-dark">
                 <strong>Location:</strong> Nigeria

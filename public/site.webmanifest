@@ -1,6 +1,7 @@
 {
-  "name": "Ayahfinder",
+  "name": "Ayahfinder - Quran Recitation Identifier",
   "short_name": "Ayahfinder",
+  "description": "Instantly identify Quran recitations and find the exact Surah and Ayah. Get translations, tafsir, and deepen your connection with the Holy Quran.",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +16,22 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#2d5f3f",
+  "background_color": "#f4f6f8",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "categories": ["education", "lifestyle", "religion"],
+  "lang": "en",
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "/1000971491.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Ayahfinder App Home Screen"
+    }
+  ]
 }
