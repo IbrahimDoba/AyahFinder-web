@@ -93,10 +93,9 @@ export const metadata: Metadata = {
     // Add your verification codes here:
     // google: "your-google-verification-code",
     // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
-    // other: {
-    //   "ahrefs-site-verification": "your-ahrefs-code",
-    // },
+    other: {
+      "msvalidate.01": "840E263E7E6376C9BCA551690B92AF5F",
+    },
   },
   appleWebApp: {
     capable: true,
