@@ -55,7 +55,7 @@ export default function Support() {
     {
       question: "How do I delete my account?",
       answer:
-        "You can request account deletion by emailing us at support@getayahfinder.com. We will process your request within 7 business days and permanently delete all your personal data from our servers.",
+        "You can request account deletion by visiting our Delete Account page at getayahfinder.com/delete-account. We will process your request within 24-48 hours and permanently delete all your personal data from our servers.",
     },
   ];
 

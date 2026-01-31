@@ -234,7 +234,13 @@ export default function Privacy() {
               </li>
               <li>
                 <strong>Deletion:</strong> Request deletion of your account and
-                personal data
+                personal data via{" "}
+                <a
+                  href="/delete-account"
+                  className="text-primary-green hover:underline"
+                >
+                  getayahfinder.com/delete-account
+                </a>
               </li>
               <li>
                 <strong>Portability:</strong> Request a copy of your data in a
