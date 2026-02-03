@@ -17,11 +17,11 @@ export default function Hero() {
             <p className="text-lg md:text-xl text-gray-medium mb-8 max-w-lg mx-auto md:mx-0">
               Instantly identify Quran recitations. Simply listen, and find the exact Surah and Ayah in seconds.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
-              <Link href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  size="lg" 
+              <Link href="/waitlist">
+                <Button
+                  size="lg"
                   className="bg-primary-green hover:bg-primary-green/90 text-white px-6 w-full sm:w-auto"
                 >
                   <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
@@ -30,10 +30,10 @@ export default function Hero() {
                   App Store
                 </Button>
               </Link>
-              <Link href="https://play.google.com" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+              <Link href="/waitlist">
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="border-primary-green text-primary-green hover:bg-primary-green/10 px-6 w-full sm:w-auto"
                 >
                   <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
