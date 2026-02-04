@@ -1,7 +1,7 @@
 export interface WaitlistFormData {
   email: string;
-  source: string; // How did you hear about us?
-  interest: string; // What interests you most?
+  source?: string; // How did you hear about us?
+  interest?: string; // What interests you most?
 }
 
 export interface LifetimeOfferFormData {

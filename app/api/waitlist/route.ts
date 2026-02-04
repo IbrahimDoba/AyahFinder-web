@@ -14,11 +14,11 @@ export async function POST(request: NextRequest) {
     const { email, source, interest } = body;
 
     // Validation
-    if (!email || !source || !interest) {
+    if (!email) {
       return NextResponse.json<ApiResponse>(
         {
           success: false,
-          message: 'Missing required fields: email, source, and interest are required',
+          message: 'Email is required',
         },
         { status: 400 }
       );
@@ -79,11 +79,13 @@ export async function POST(request: NextRequest) {
               </div>
               <div class="content">
                 <p>Thank you for joining our waitlist! We're excited to have you as part of our community.</p>
+                ${source || interest ? `
                 <p><strong>What you told us:</strong></p>
                 <ul>
-                  <li><strong>How you heard about us:</strong> ${source}</li>
-                  <li><strong>What interests you:</strong> ${interest}</li>
+                  ${source ? `<li><strong>How you heard about us:</strong> ${source}</li>` : ''}
+                  ${interest ? `<li><strong>What interests you:</strong> ${interest}</li>` : ''}
                 </ul>
+                ` : ''}
                 <p>We're working hard to bring Ayahfinder to life. You'll be among the first to know when we launch!</p>
                 <p>In the meantime, stay connected:</p>
                 <a href="${process.env.NEXT_PUBLIC_SITE_URL}/blog" class="button" style="color: #ffffff !important;">Read Our Blog</a>
