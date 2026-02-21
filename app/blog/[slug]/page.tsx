@@ -342,6 +342,27 @@ export default async function BlogPostPage({
   );
 }
 
+// Renders inline markdown: **bold**, *italic*, `code`
+function renderInlineMarkdown(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*\n]+\*\*|\*[^*\n]+\*|`[^`\n]+`)/);
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (/^\*\*[^*]+\*\*$/.test(part)) {
+          return <strong key={i} className="font-semibold text-gray-dark">{part.slice(2, -2)}</strong>;
+        }
+        if (/^\*[^*]+\*$/.test(part)) {
+          return <em key={i}>{part.slice(1, -1)}</em>;
+        }
+        if (/^`[^`]+`$/.test(part)) {
+          return <code key={i} className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono text-primary-green">{part.slice(1, -1)}</code>;
+        }
+        return part;
+      })}
+    </>
+  );
+}
+
 // MDX Content renderer component
 function MDXContent({ content }: { content: string }) {
   // Clean the content - remove any remaining frontmatter artifacts
@@ -403,7 +424,7 @@ function MDXContent({ content }: { content: string }) {
           );
         } else if (currentComponent === 'CtaBox') {
           elements.push(
-            <CtaBox key={stableKey} title="Experience AyahFinder Today" buttonText="Download Free" buttonHref="#">
+            <CtaBox key={stableKey} title="Experience AyahFinder Today" buttonText="Download Free" buttonHref="/waitlist">
               Join millions of Muslims worldwide who use AyahFinder to instantly identify Quran recitations. Available on iOS and Android.
             </CtaBox>
           );
@@ -420,18 +441,18 @@ function MDXContent({ content }: { content: string }) {
 
     // Render headers with stable keys
     if (trimmed.startsWith('### ')) {
-      elements.push(<h3 key={`h3-${i}`} className="text-xl font-bold text-gray-dark mt-8 mb-4">{trimmed.slice(4)}</h3>);
+      elements.push(<h3 key={`h3-${i}`} className="text-xl font-bold text-gray-dark mt-8 mb-4">{renderInlineMarkdown(trimmed.slice(4))}</h3>);
       continue;
     }
-    
+
     if (trimmed.startsWith('## ')) {
-      elements.push(<h2 key={`h2-${i}`} className="text-2xl font-bold text-gray-dark mt-10 mb-4 pt-4 border-t border-gray-200">{trimmed.slice(3)}</h2>);
+      elements.push(<h2 key={`h2-${i}`} className="text-2xl font-bold text-gray-dark mt-10 mb-4 pt-4 border-t border-gray-200">{renderInlineMarkdown(trimmed.slice(3))}</h2>);
       continue;
     }
 
     // Render bullet points
     if (trimmed.startsWith('• ') || (trimmed.startsWith('- ') && !trimmed.startsWith('---'))) {
-      elements.push(<li key={`li-${i}`} className="ml-6 text-gray-medium list-disc">{trimmed.slice(2)}</li>);
+      elements.push(<li key={`li-${i}`} className="ml-6 text-gray-medium list-disc">{renderInlineMarkdown(trimmed.slice(2))}</li>);
       continue;
     }
 
@@ -451,8 +472,9 @@ function MDXContent({ content }: { content: string }) {
       continue;
     }
     
-    // Handle image captions (italic text starting with "Image:")
-    if (trimmed.startsWith('*Image:') || trimmed.startsWith('_Image:')) {
+    // Handle image captions (italic lines like *Photo source: ...* or *Image: ...*)
+    if ((trimmed.startsWith('*') && trimmed.endsWith('*') && !trimmed.startsWith('**')) ||
+        trimmed.startsWith('_Image:') || trimmed.startsWith('*Image:')) {
       const caption = trimmed.replace(/^[*_]|[_*]$/g, '');
       elements.push(<p key={`cap-${i}`} className="text-center text-sm text-gray-light italic -mt-6 mb-8">{caption}</p>);
       continue;
@@ -460,7 +482,7 @@ function MDXContent({ content }: { content: string }) {
 
     // Default paragraph
     if (trimmed) {
-      elements.push(<p key={`p-${i}`} className="text-gray-medium leading-relaxed mb-4">{trimmed}</p>);
+      elements.push(<p key={`p-${i}`} className="text-gray-medium leading-relaxed mb-4">{renderInlineMarkdown(trimmed)}</p>);
     }
   }
 

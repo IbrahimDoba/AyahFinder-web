@@ -13,7 +13,7 @@ export function CtaBox({
   children,
   title = "Download Ayahfinder Today",
   buttonText = "Get the App",
-  buttonHref = "#",
+  buttonHref = "/waitlist",
   variant = "primary",
 }: CtaBoxProps) {
   const variants = {
