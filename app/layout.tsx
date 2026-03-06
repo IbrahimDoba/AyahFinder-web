@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { OrganizationSchema, WebSiteSchema } from "@/components/OrganizationSchema";
+import { Analytics } from "@vercel/analytics/next";
 
 // Define metadataBase for resolving relative URLs
 export const metadataBase = new URL("https://getayahfinder.com");
@@ -134,6 +135,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
